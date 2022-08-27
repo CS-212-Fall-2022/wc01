@@ -36,5 +36,6 @@ def fetch_testcases(path: str) -> [Case]:
 def test_index(case):
     dfa = DFA(case.dfa)
     for w, status in zip(case.strings, case.accepts):
-        assert status == dfa.accepts(w), \
-        f'bad {status=} for {w=} by {case.dfa=}'
+        accept = dfa.accepts(w)
+        assert status == accept, \
+        f'bad status {accept=} for {w=} by {case.dfa=}'
