@@ -14,9 +14,6 @@ class Case:
     strings: [str]
     accepts: [bool]
 
-corpusfile = ''
-corpus = None
-        
 def fetch_testcases(path: str) -> [Case]:
     testcases = []
     if path.startswith('http'):
